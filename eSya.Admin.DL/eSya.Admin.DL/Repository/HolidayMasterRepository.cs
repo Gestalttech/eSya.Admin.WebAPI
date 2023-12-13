@@ -69,6 +69,7 @@ namespace eSya.Admin.DL.Repository
                                 HolidayDate = obj.HolidayDate,
                                 HolidayDesc = obj.HolidayDesc,
                                 ActiveStatus = obj.ActiveStatus,
+                                FormId=obj.FormID,
                                 CreatedBy = obj.UserID,
                                 CreatedOn = System.DateTime.Now,
                                 CreatedTerminal = obj.TerminalID

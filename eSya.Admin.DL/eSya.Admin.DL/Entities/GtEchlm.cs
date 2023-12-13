@@ -8,6 +8,7 @@ namespace eSya.Admin.DL.Entities
         public int BusinessKey { get; set; }
         public DateTime HolidayDate { get; set; }
         public string HolidayDesc { get; set; } = null!;
+        public string? FormId { get; set; }
         public bool ActiveStatus { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }

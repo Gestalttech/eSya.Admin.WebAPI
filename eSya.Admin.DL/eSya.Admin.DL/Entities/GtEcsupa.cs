@@ -10,6 +10,7 @@ namespace eSya.Admin.DL.Entities
         public int ParameterId { get; set; }
         public bool Action { get; set; }
         public bool ActiveStatus { get; set; }
+        public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public string CreatedTerminal { get; set; } = null!;

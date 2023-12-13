@@ -233,20 +233,6 @@ namespace eSya.Admin.DL.Entities
 
                 entity.Property(e => e.CurrencyCode).HasMaxLength(4);
 
-                entity.Property(e => e.EActiveUsers).HasColumnName("eActiveUsers");
-
-                entity.Property(e => e.EBusinessKey).HasColumnName("eBusinessKey");
-
-                entity.Property(e => e.ENoOfBeds).HasColumnName("eNoOfBeds");
-
-                entity.Property(e => e.ESyaLicenseType)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasColumnName("eSyaLicenseType")
-                    .IsFixedLength();
-
-                entity.Property(e => e.EUserLicenses).HasColumnName("eUserLicenses");
-
                 entity.Property(e => e.FormId)
                     .HasMaxLength(10)
                     .IsUnicode(false)
@@ -256,13 +242,11 @@ namespace eSya.Admin.DL.Entities
 
                 entity.Property(e => e.LocationDescription).HasMaxLength(150);
 
-                entity.Property(e => e.LocnDateFormat)
-                    .HasMaxLength(12)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.ShortDesc).HasMaxLength(15);
 
                 entity.Property(e => e.TocurrConversion).HasColumnName("TOCurrConversion");
 
@@ -337,6 +321,11 @@ namespace eSya.Admin.DL.Entities
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
 
                 entity.Property(e => e.HolidayDesc).HasMaxLength(150);
 
@@ -432,6 +421,11 @@ namespace eSya.Admin.DL.Entities
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
 
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
