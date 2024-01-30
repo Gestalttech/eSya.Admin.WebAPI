@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\InventoryRulesRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="PMC_Commands - Copy.txt" />
   </ItemGroup>
 

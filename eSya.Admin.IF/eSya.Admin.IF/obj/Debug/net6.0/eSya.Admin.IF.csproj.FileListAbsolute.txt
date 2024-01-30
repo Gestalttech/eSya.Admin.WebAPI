@@ -23,6 +23,7 @@ D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\D
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.sourcelink.json
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.csproj.CopyComplete
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\eSya.Admin.IF.dll
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.IF\eSya.Admin.IF\obj\Debug\net6.0\refint\eSya.Admin.IF.dll

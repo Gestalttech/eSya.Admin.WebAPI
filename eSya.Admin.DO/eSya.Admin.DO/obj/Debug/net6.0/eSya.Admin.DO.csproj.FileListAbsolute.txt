@@ -13,11 +13,11 @@ D:\Projects\eSyaJsonworking\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\De
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\bin\Debug\net6.0\eSya.Admin.DO.deps.json
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\bin\Debug\net6.0\eSya.Admin.DO.dll
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\bin\Debug\net6.0\eSya.Admin.DO.pdb
-D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.csproj.AssemblyReference.cache
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.sourcelink.json
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.dll
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\refint\eSya.Admin.DO.dll
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.DO\eSya.Admin.DO\obj\Debug\net6.0\eSya.Admin.DO.pdb

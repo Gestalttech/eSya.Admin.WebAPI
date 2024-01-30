@@ -7,11 +7,10 @@
   "W0131": "Zip Code is already Exist",
   "W0132": "Holiday Package is already Exits",
   "W0133": "Holiday Package is not Exists",
-  "W0134": "Inventory Rule is already exist Please select another one",
-  "W0135": "Inventory Rule Description is already Exist",
-  "W0136": "Inventory Rule is not  Exist",
-  "W0137": "The combination of Unit of Measurement Purchase  and Unit of Measurement Stock already Exist",
-  "W0138": "Unit of Measure is not Exist",
+  
+ 
+ 
+  
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",
   "S0003": "Activated Successfully",

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="DO_InventoryRules.cs" />
+    <Compile Remove="DO_UnitofMeasure.cs" />
+  </ItemGroup>
+
 </Project>

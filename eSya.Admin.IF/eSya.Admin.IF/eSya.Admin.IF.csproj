@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="IInventoryRulesRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\eSya.Admin.DO\eSya.Admin.DO\eSya.Admin.DO.csproj" />
   </ItemGroup>
 

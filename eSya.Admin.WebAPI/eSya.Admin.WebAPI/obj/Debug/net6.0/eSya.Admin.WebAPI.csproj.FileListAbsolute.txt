@@ -542,13 +542,14 @@ D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebA
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.csproj.CoreCompileInputs.cache
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.sourcelink.json
+D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.eSya.Admin.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.eSya.Admin.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.eSya.Admin.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.eSya.Admin.WebAPI.props
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets.build.json
-D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\scopedcss\bundle\eSya.Admin.WebAPI.styles.css
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.csproj.CopyComplete
 D:\Projects\eSyaProjects2022\eSya.Admin.WebAPI\eSya.Admin.WebAPI\eSya.Admin.WebAPI\obj\Debug\net6.0\eSya.Admin.WebAPI.dll
