@@ -56,6 +56,8 @@ builder.Services.AddScoped<IHolidayMasterRepository, HolidayMasterRepository>();
 
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
+
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
