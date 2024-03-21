@@ -127,13 +127,13 @@ namespace eSya.Admin.DL.Repository
                                 && w.CodeDesc.ToUpper().Replace(" ", "") == obj.CodeDesc.ToUpper().Replace(" ", "")).Count();
                         if (is_CodeDescExist > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0017", Message = string.Format(_localizer[name: "W0017"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0069", Message = string.Format(_localizer[name: "W0069"]) };
                         }
 
                         var is_DefaultStatusTrue = db.GtEcapcds.Where(w => w.DefaultStatus && w.CodeType == obj.CodeType && w.ActiveStatus).Count();
                         if (obj.DefaultStatus && is_DefaultStatusTrue > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0018", Message = string.Format(_localizer[name: "W0018"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0070", Message = string.Format(_localizer[name: "W0070"]) };
                         }
 
                         GtEcapct ap_ct = db.GtEcapcts.Where(w => w.CodeType == obj.CodeType).FirstOrDefault();
@@ -152,7 +152,8 @@ namespace eSya.Admin.DL.Repository
                             maxAppcode = maxAppcode + 1;
                         if (!maxAppcode.ToString().StartsWith(obj.CodeType.ToString()))
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0019", Message = string.Format(_localizer[name: "W0019"]) };
+                            
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0072", Message = string.Format(_localizer[name: "W0072"]) };
                         }
 
                         var ap_cd = new GtEcapcd
@@ -200,7 +201,7 @@ namespace eSya.Admin.DL.Repository
                         GtEcapcd ap_cd = db.GtEcapcds.Where(w => w.ApplicationCode == obj.ApplicationCode).FirstOrDefault();
                         if (ap_cd == null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0020", Message = string.Format(_localizer[name: "W0020"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0071", Message = string.Format(_localizer[name: "W0071"]) };
                         }
 
                         IEnumerable<GtEcapcd> ls_apct = db.GtEcapcds.Where(w => w.CodeType == obj.CodeType).ToList();
@@ -209,14 +210,14 @@ namespace eSya.Admin.DL.Repository
                                 && w.ApplicationCode != obj.ApplicationCode).Count();
                         if (is_SameDescExists > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0017", Message = string.Format(_localizer[name: "W0017"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0069", Message = string.Format(_localizer[name: "W0069"]) };
                         }
 
                         var is_DefaultStatusAssign = ls_apct.Where(w => w.DefaultStatus && w.CodeType == obj.CodeType
                                 && w.ApplicationCode != obj.ApplicationCode && w.ActiveStatus).Count();
                         if (obj.DefaultStatus && is_DefaultStatusAssign > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0018", Message = string.Format(_localizer[name: "W0018"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0070", Message = string.Format(_localizer[name: "W0070"]) };
                         }
 
                         ap_cd.CodeDesc = obj.CodeDesc.Trim();
@@ -280,7 +281,7 @@ namespace eSya.Admin.DL.Repository
                         GtEcapcd ap_code = db.GtEcapcds.Where(w => w.ApplicationCode == app_code).FirstOrDefault();
                         if (ap_code == null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0018", Message = string.Format(_localizer[name: "W0018"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0071", Message = string.Format(_localizer[name: "W0071"]) };
                         }
 
                         ap_code.ActiveStatus = status;

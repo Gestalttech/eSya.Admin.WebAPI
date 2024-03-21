@@ -1,13 +1,14 @@
 {
-  "W0017": "Application Code is already Exist",
-  "W0018": "Only one Application code can have Default Status true",
-  "W0019": "Check application code generation",
-  "W0020": "Application Code is not Exist",
-  "W0130": "Statutory Detail is Required",
-  "W0131": "Zip Code is already Exist",
-  "W0132": "Holiday Package is already Exits",
-  "W0133": "Holiday Package is not Exists",
-  "W0134": "Year and selected date year should be same",
+  "W0069": "Application Code is already Exist",
+  "W0070": "Only one Application code can have Default Status true",
+  "W0071": "Application Code is not Exist",
+  "W0072": "Check application code generation",
+  "W0073": "Statutory Detail is Required",
+  "W0074": "Zip Code is already Exist",
+  "W0075": "Zip Code is not Exist",
+  "W0076": "Holiday Package is already Exist",
+  "W0077": "Holiday Package is not Exist",
+  "W0078": "Year and selected date year should be same",
 
 
 

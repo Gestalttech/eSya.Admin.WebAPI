@@ -155,7 +155,7 @@ namespace eSya.Admin.DL.Repository
 
                         else
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0131", Message = string.Format(_localizer[name: "W0131"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0074", Message = string.Format(_localizer[name: "W0074"]) };
                         }
                     }
                     catch (DbUpdateException ex)
@@ -242,7 +242,7 @@ namespace eSya.Admin.DL.Repository
 
                         else
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0131", Message = string.Format(_localizer[name: "W0131"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0075", Message = string.Format(_localizer[name: "W0075"]) };
                         }
                     }
                     catch (DbUpdateException ex)

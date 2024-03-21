@@ -60,12 +60,12 @@ namespace eSya.Admin.DL.Repository
                     {
                         if (obj.Year != obj.HolidayDate.Year)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0134", Message = string.Format(_localizer[name: "W0134"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0078", Message = string.Format(_localizer[name: "W0078"]) };
                         }
                         var _IsHolidayExits = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year==obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ","")==obj.HolidayType.ToUpper().Replace(" ","")).FirstOrDefault();
                         if (_IsHolidayExits != null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0132", Message = string.Format(_localizer[name: "W0132"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0076", Message = string.Format(_localizer[name: "W0076"]) };
                         }
                         else
                         {
@@ -121,7 +121,7 @@ namespace eSya.Admin.DL.Repository
 
                         if (_HM == null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0133", Message = string.Format(_localizer[name: "W0133"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0077", Message = string.Format(_localizer[name: "W0077"]) };
                         }
                         else
                         {
@@ -166,7 +166,7 @@ namespace eSya.Admin.DL.Repository
                         var _HM = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year == obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ", "") == obj.HolidayType.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_HM == null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0133", Message = string.Format(_localizer[name: "W0133"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0077", Message = string.Format(_localizer[name: "W0077"]) };
                         }
                         else
                         {

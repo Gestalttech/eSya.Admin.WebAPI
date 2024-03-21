@@ -128,7 +128,7 @@ namespace eSya.Admin.DL.Repository
                         var is_StatutoryDetailEnter = obj.Where(w => !String.IsNullOrEmpty(w.StatutoryValue)).Count();
                         if (is_StatutoryDetailEnter <= 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0130", Message = string.Format(_localizer[name: "W0130"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0073", Message = string.Format(_localizer[name: "W0073"]) };
                         }
 
                         foreach (var sd in obj.Where(w => !String.IsNullOrEmpty(w.StatutoryValue)))
