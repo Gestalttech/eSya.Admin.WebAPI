@@ -240,6 +240,8 @@ namespace eSya.Admin.DL.Entities
 
                 entity.Property(e => e.LocationDescription).HasMaxLength(150);
 
+                entity.Property(e => e.Lstatus).HasColumnName("LStatus");
+
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
@@ -310,9 +312,14 @@ namespace eSya.Admin.DL.Entities
 
             modelBuilder.Entity<GtEchlm>(entity =>
             {
-                entity.HasKey(e => new { e.BusinessKey, e.HolidayDate });
+                entity.HasKey(e => new { e.BusinessKey, e.Year, e.HolidayType, e.HolidayDate });
 
                 entity.ToTable("GT_ECHLMS");
+
+                entity.Property(e => e.HolidayType)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
 
                 entity.Property(e => e.HolidayDate).HasColumnType("datetime");
 

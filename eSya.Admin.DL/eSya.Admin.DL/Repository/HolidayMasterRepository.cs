@@ -29,6 +29,8 @@ namespace eSya.Admin.DL.Repository
                     .Where(w => w.BusinessKey == BusinessKey).Select(r => new DO_HolidayMaster
                     {
                         BusinessKey = r.BusinessKey,
+                        Year=r.Year,
+                        HolidayType=r.HolidayType,
                         HolidayDate = r.HolidayDate,
                         HolidayDesc = r.HolidayDesc,
                         ActiveStatus = r.ActiveStatus
@@ -56,7 +58,7 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
-                        var _IsHolidayExits = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.HolidayDate == obj.HolidayDate).FirstOrDefault();
+                        var _IsHolidayExits = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year==obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ","")==obj.HolidayType.ToUpper().Replace(" ","")).FirstOrDefault();
                         if (_IsHolidayExits != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0132", Message = string.Format(_localizer[name: "W0132"]) };
@@ -66,6 +68,8 @@ namespace eSya.Admin.DL.Repository
                             var hp = new GtEchlm 
                             {
                                 BusinessKey = obj.BusinessKey,
+                                Year=obj.Year,
+                                HolidayType= obj.HolidayType,
                                 HolidayDate = obj.HolidayDate,
                                 HolidayDesc = obj.HolidayDesc,
                                 ActiveStatus = obj.ActiveStatus,
@@ -109,7 +113,7 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
-                        var _HM = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.HolidayDate == obj.HolidayDate).FirstOrDefault();
+                        var _HM = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year == obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ", "") == obj.HolidayType.ToUpper().Replace(" ", "")).FirstOrDefault();
 
                         if (_HM == null)
                         {
@@ -117,8 +121,6 @@ namespace eSya.Admin.DL.Repository
                         }
                         else
                         {
-                            _HM.BusinessKey = obj.BusinessKey;
-                            _HM.HolidayDate = obj.HolidayDate;
                             _HM.HolidayDesc = obj.HolidayDesc;
                             _HM.ActiveStatus = obj.ActiveStatus;
                             _HM.ModifiedBy = obj.UserID;
@@ -157,8 +159,7 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
-                        var _HM = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.HolidayDate == obj.HolidayDate).FirstOrDefault();
-
+                        var _HM = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year == obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ", "") == obj.HolidayType.ToUpper().Replace(" ", "")).FirstOrDefault();
                         if (_HM == null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0133", Message = string.Format(_localizer[name: "W0133"]) };

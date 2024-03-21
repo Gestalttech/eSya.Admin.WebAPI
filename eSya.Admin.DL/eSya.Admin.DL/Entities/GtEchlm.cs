@@ -6,6 +6,8 @@ namespace eSya.Admin.DL.Entities
     public partial class GtEchlm
     {
         public int BusinessKey { get; set; }
+        public int Year { get; set; }
+        public string HolidayType { get; set; } = null!;
         public DateTime HolidayDate { get; set; }
         public string HolidayDesc { get; set; } = null!;
         public string? FormId { get; set; }
