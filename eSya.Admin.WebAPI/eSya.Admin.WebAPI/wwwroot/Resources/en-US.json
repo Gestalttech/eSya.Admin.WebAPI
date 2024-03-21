@@ -7,12 +7,12 @@
   "W0131": "Zip Code is already Exist",
   "W0132": "Holiday Package is already Exits",
   "W0133": "Holiday Package is not Exists",
-  
- 
- 
-  
+  "W0134": "Year and selected date year should be same",
+
+
+
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",
   "S0003": "Activated Successfully",
-  "S0004": "De Activated Successfully",
+  "S0004": "De Activated Successfully"
 }

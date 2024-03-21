@@ -58,6 +58,10 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
+                        if (obj.Year != obj.HolidayDate.Year)
+                        {
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0134", Message = string.Format(_localizer[name: "W0134"]) };
+                        }
                         var _IsHolidayExits = db.GtEchlms.Where(w => w.BusinessKey == obj.BusinessKey && w.Year==obj.Year && w.HolidayDate == obj.HolidayDate && w.HolidayType.ToUpper().Replace(" ","")==obj.HolidayType.ToUpper().Replace(" ","")).FirstOrDefault();
                         if (_IsHolidayExits != null)
                         {
