@@ -9,8 +9,11 @@
   "W0076": "Holiday Package is already Exist",
   "W0077": "Holiday Package is not Exist",
   "W0078": "Year and selected date year should be same",
-
-
+  "W0079": "Inventory Rule is already exist Please select another one",
+  "W0080": "Inventory Rule Description is already Exist",
+  "W0081": "Inventory Rule is not  Exist",
+  "W0082": "The combination of Unit of Measurement Purchase  and Unit of Measurement Stock already Exist",
+  "W0083": "Unit of Measure is not Exist",
 
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",

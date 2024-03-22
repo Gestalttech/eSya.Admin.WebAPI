@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DO_InventoryRules.cs" />
-    <Compile Remove="DO_UnitofMeasure.cs" />
+    <Compile Remove="DO_UnitsofMeasure.cs" />
   </ItemGroup>
 
 </Project>

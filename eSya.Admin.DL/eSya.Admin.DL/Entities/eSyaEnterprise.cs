@@ -27,6 +27,8 @@ namespace eSya.Admin.DL.Entities
         public virtual DbSet<GtEcbssd> GtEcbssds { get; set; } = null!;
         public virtual DbSet<GtEccnsd> GtEccnsds { get; set; } = null!;
         public virtual DbSet<GtEchlm> GtEchlms { get; set; } = null!;
+        public virtual DbSet<GtEcinvr> GtEcinvrs { get; set; } = null!;
+        public virtual DbSet<GtEciuom> GtEciuoms { get; set; } = null!;
         public virtual DbSet<GtEcsupa> GtEcsupas { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -337,6 +339,80 @@ namespace eSya.Admin.DL.Entities
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<GtEcinvr>(entity =>
+            {
+                entity.HasKey(e => e.InventoryRuleId);
+
+                entity.ToTable("GT_ECINVR");
+
+                entity.Property(e => e.InventoryRuleId)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("InventoryRuleID")
+                    .IsFixedLength();
+
+                entity.Property(e => e.ApplyToSrn).HasColumnName("ApplyToSRN");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.InventoryRuleDesc)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<GtEciuom>(entity =>
+            {
+                entity.HasKey(e => e.UnitOfMeasure);
+
+                entity.ToTable("GT_ECIUOM");
+
+                entity.Property(e => e.UnitOfMeasure).ValueGeneratedNever();
+
+                entity.Property(e => e.ConversionFactor).HasColumnType("numeric(12, 5)");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.Uompdesc)
+                    .HasMaxLength(50)
+                    .HasColumnName("UOMPDesc");
+
+                entity.Property(e => e.Uompurchase)
+                    .HasMaxLength(4)
+                    .IsUnicode(false)
+                    .HasColumnName("UOMPurchase");
+
+                entity.Property(e => e.Uomsdesc)
+                    .HasMaxLength(50)
+                    .HasColumnName("UOMSDesc");
+
+                entity.Property(e => e.Uomstock)
+                    .HasMaxLength(4)
+                    .IsUnicode(false)
+                    .HasColumnName("UOMStock");
             });
 
             modelBuilder.Entity<GtEcsupa>(entity =>

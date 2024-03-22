@@ -53,7 +53,7 @@ builder.Services.AddScoped<IApplicationCodesRepository, ApplicationCodesReposito
 builder.Services.AddScoped<IBusinessStructureRepository, BusinessStructureRepository>();
 builder.Services.AddScoped<ICountryAreaRepository, CountryAreaRepository>();
 builder.Services.AddScoped<IHolidayMasterRepository, HolidayMasterRepository>();
-
+builder.Services.AddScoped<IRulesRepository, RulesRepository>();
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
 
