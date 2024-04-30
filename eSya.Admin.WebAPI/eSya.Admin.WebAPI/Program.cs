@@ -54,6 +54,7 @@ builder.Services.AddScoped<IBusinessStructureRepository, BusinessStructureReposi
 builder.Services.AddScoped<ICountryAreaRepository, CountryAreaRepository>();
 builder.Services.AddScoped<IHolidayMasterRepository, HolidayMasterRepository>();
 builder.Services.AddScoped<IRulesRepository, RulesRepository>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>(); 
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
 

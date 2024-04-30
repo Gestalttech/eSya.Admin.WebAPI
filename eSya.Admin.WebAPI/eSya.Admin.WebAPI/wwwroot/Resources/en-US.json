@@ -14,6 +14,10 @@
   "W0081": "Inventory Rule is not  Exist",
   "W0082": "The combination of Unit of Measurement Purchase  and Unit of Measurement Stock already Exist",
   "W0083": "Unit of Measure is not Exist",
+  "W0116": "Department Description is already Exist",
+  "W0117": "Department is not Exist",
+
+
 
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",

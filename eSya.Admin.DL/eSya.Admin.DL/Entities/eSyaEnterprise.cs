@@ -27,9 +27,11 @@ namespace eSya.Admin.DL.Entities
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
         public virtual DbSet<GtEcbssd> GtEcbssds { get; set; } = null!;
         public virtual DbSet<GtEccnsd> GtEccnsds { get; set; } = null!;
+        public virtual DbSet<GtEcdept> GtEcdepts { get; set; } = null!;
         public virtual DbSet<GtEchlm> GtEchlms { get; set; } = null!;
         public virtual DbSet<GtEcinvr> GtEcinvrs { get; set; } = null!;
         public virtual DbSet<GtEciuom> GtEciuoms { get; set; } = null!;
+        public virtual DbSet<GtEcstrm> GtEcstrms { get; set; } = null!;
         public virtual DbSet<GtEcsupa> GtEcsupas { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -313,6 +315,30 @@ namespace eSya.Admin.DL.Entities
                 entity.Property(e => e.StatutoryDescription).HasMaxLength(50);
             });
 
+            modelBuilder.Entity<GtEcdept>(entity =>
+            {
+                entity.HasKey(e => new { e.DeptCategory, e.DeptId });
+
+                entity.ToTable("GT_ECDEPT");
+
+                entity.Property(e => e.DeptId).HasColumnName("DeptID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.DeptDesc).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<GtEchlm>(entity =>
             {
                 entity.HasKey(e => new { e.BusinessKey, e.Year, e.HolidayType, e.HolidayDate });
@@ -414,6 +440,29 @@ namespace eSya.Admin.DL.Entities
                     .HasMaxLength(4)
                     .IsUnicode(false)
                     .HasColumnName("UOMStock");
+            });
+
+            modelBuilder.Entity<GtEcstrm>(entity =>
+            {
+                entity.HasKey(e => new { e.StoreCode, e.StoreType })
+                    .HasName("PK_GT_ECSTRM_1");
+
+                entity.ToTable("GT_ECSTRM");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.StoreDesc).HasMaxLength(50);
             });
 
             modelBuilder.Entity<GtEcsupa>(entity =>
