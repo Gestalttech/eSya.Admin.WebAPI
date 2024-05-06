@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace eSya.Admin.DL.Repository
 {
-    public class RulesRepository: IRulesRepository
+    public class RulesRepository : IRulesRepository
     {
         private readonly IStringLocalizer<RulesRepository> _localizer;
         public RulesRepository(IStringLocalizer<RulesRepository> localizer)
@@ -185,25 +185,58 @@ namespace eSya.Admin.DL.Repository
         #endregion
 
         #region Unit of Measure
+        public async Task<List<DO_ApplicationCodes>> GetApplicationCodesByCodeTypeList(List<int> l_codeType)
+        {
+            try
+            {
+                using (var db = new eSyaEnterprise())
+                {
+                    var ds = db.GtEcapcds
+                        .Where(w => w.ActiveStatus
+                        && l_codeType.Contains(w.CodeType))
+                        .Select(r => new DO_ApplicationCodes
+                        {
+                            CodeType = r.CodeType,
+                            ApplicationCode = r.ApplicationCode,
+                            CodeDesc = r.CodeDesc
+                        }).OrderBy(o => o.CodeDesc).ToListAsync();
+
+                    return await ds;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<DO_UnitofMeasure>> GetUnitofMeasurements()
         {
             try
             {
                 using (eSyaEnterprise db = new eSyaEnterprise())
                 {
-                    var result = db.GtEciuoms
+                    var ds = db.GtEciuoms.Join
+                    (db.GtEcapcds,
+                    um => new { um.Uompurchase },
+                    up => new { Uompurchase = up.ApplicationCode },
+                    (um, up) => new { um, up }).
+                    Join(db.GtEcapcds,
+                    ums => new { ums.um.Uomstock },
+                    us => new { Uomstock = us.ApplicationCode },
+                    (ums, us) => new { ums, us })
 
-                                  .Select(u => new DO_UnitofMeasure
-                                  {
-                                      UnitOfMeasure = u.UnitOfMeasure,
-                                      Uompurchase = u.Uompurchase,
-                                      Uomstock = u.Uomstock,
-                                      Uompdesc = u.Uompdesc,
-                                      Uomsdesc = u.Uomsdesc,
-                                      ConversionFactor = u.ConversionFactor,
-                                      ActiveStatus = u.ActiveStatus
-                                  }).OrderBy(o => o.UnitOfMeasure).ToListAsync();
-                    return await result;
+               .Select(r => new DO_UnitofMeasure
+               {
+                   UnitOfMeasure = r.ums.um.UnitOfMeasure,
+                   Uompurchase = r.ums.um.Uompurchase,
+                   Uomstock = r.ums.um.Uomstock,
+                   ConversionFactor = r.ums.um.ConversionFactor,
+                   Uompdesc = r.ums.up.CodeDesc,
+                   Uomsdesc = r.us.CodeDesc,
+                   ActiveStatus = r.ums.um.ActiveStatus
+               }).ToListAsync();
+                    return await ds;
                 }
             }
             catch (Exception ex)
@@ -239,8 +272,7 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
-                        GtEciuom isUompExists = db.GtEciuoms.FirstOrDefault(u => u.Uompurchase.ToUpper().Replace(" ", "") == uoms.Uompurchase.ToUpper().Replace(" ", "") &&
-                        u.Uomstock.ToUpper().Replace(" ", "") == uoms.Uomstock.ToUpper().Replace(" ", ""));
+                        GtEciuom isUompExists = db.GtEciuoms.FirstOrDefault(u => u.Uompurchase == uoms.Uompurchase && u.Uomstock == uoms.Uomstock);
                         if (isUompExists != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0082", Message = string.Format(_localizer[name: "W0082"]) };
@@ -253,9 +285,8 @@ namespace eSya.Admin.DL.Repository
                             UnitOfMeasure = uomId,
                             Uompurchase = uoms.Uompurchase,
                             Uomstock = uoms.Uomstock,
-                            Uompdesc = uoms.Uompdesc,
-                            Uomsdesc = uoms.Uomsdesc,
                             ConversionFactor = uoms.ConversionFactor,
+                            UsageStatus=false,
                             ActiveStatus = uoms.ActiveStatus,
                             FormId = uoms.FormId,
                             CreatedBy = uoms.UserID,
@@ -289,8 +320,7 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
-                        GtEciuom isUompExists = db.GtEciuoms.FirstOrDefault(u => u.Uompurchase.ToUpper().Replace(" ", "") == uoms.Uompurchase.ToUpper().Replace(" ", "") &&
-                       u.Uomstock.ToUpper().Replace(" ", "") == uoms.Uomstock.ToUpper().Replace(" ", "") && u.UnitOfMeasure != uoms.UnitOfMeasure);
+                        GtEciuom isUompExists = db.GtEciuoms.FirstOrDefault(u => u.Uompurchase== uoms.Uompurchase && u.Uomstock == uoms.Uomstock && u.UnitOfMeasure != uoms.UnitOfMeasure);
                         if (isUompExists != null)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0082", Message = string.Format(_localizer[name: "W0082"]) };
@@ -303,11 +333,14 @@ namespace eSya.Admin.DL.Repository
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0083", Message = string.Format(_localizer[name: "W0083"]) };
                         }
+                        bool used = db.GtEciuoms.Any(x => x.UnitOfMeasure == uoms.UnitOfMeasure && x.UsageStatus);
+                        if (used)
+                        {
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0129", Message = string.Format(_localizer[name: "W0129"]) };
 
+                        }
                         objuoms.Uompurchase = uoms.Uompurchase;
                         objuoms.Uomstock = uoms.Uomstock;
-                        objuoms.Uompdesc = uoms.Uompdesc;
-                        objuoms.Uomsdesc = uoms.Uomsdesc;
                         objuoms.ConversionFactor = uoms.ConversionFactor;
                         objuoms.ActiveStatus = uoms.ActiveStatus;
                         objuoms.ModifiedBy = uoms.UserID;
@@ -332,50 +365,6 @@ namespace eSya.Admin.DL.Repository
             }
         }
 
-        public async Task<DO_UnitofMeasure> GetUOMPDescriptionbyUOMP(string uomp)
-        {
-            try
-            {
-                using (eSyaEnterprise db = new eSyaEnterprise())
-                {
-
-                    var result = db.GtEciuoms.Where(u => u.Uompurchase.ToUpper().Replace(" ", "") == uomp.ToUpper().Replace(" ", "")).Select(x => new DO_UnitofMeasure
-                    {
-                        Uompdesc = x.Uompdesc
-                    }).FirstOrDefaultAsync();
-
-
-                    return await result;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public async Task<DO_UnitofMeasure> GetUOMSDescriptionbyUOMS(string uoms)
-        {
-            try
-            {
-                using (eSyaEnterprise db = new eSyaEnterprise())
-                {
-
-                    var result = db.GtEciuoms.Where(u => u.Uomstock.ToUpper().Replace(" ", "") == uoms.ToUpper().Replace(" ", "")).Select(x => new DO_UnitofMeasure
-                    {
-                        Uomsdesc = x.Uomsdesc
-                    }).FirstOrDefaultAsync();
-
-
-                    return await result;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public async Task<DO_ReturnParameter> ActiveOrDeActiveUnitofMeasure(bool status, int unitId)
         {
             using (var db = new eSyaEnterprise())
@@ -384,6 +373,12 @@ namespace eSya.Admin.DL.Repository
                 {
                     try
                     {
+                        bool used = db.GtEciuoms.Any(x => x.UnitOfMeasure == unitId && x.UsageStatus);
+                        if (used)
+                        {
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0129", Message = string.Format(_localizer[name: "W0129"]) };
+
+                        }
                         GtEciuom unit_mesure = db.GtEciuoms.Where(w => w.UnitOfMeasure == unitId).FirstOrDefault();
                         if (unit_mesure == null)
                         {
@@ -412,7 +407,7 @@ namespace eSya.Admin.DL.Repository
                 }
             }
         }
-       
+
 
         #endregion
     }

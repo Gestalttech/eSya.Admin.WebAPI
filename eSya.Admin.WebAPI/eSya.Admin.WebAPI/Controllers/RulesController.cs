@@ -64,6 +64,17 @@ namespace eSya.Admin.WebAPI.Controllers
 
         #region Unit of Measure
         /// <summary>
+        /// Getting  Unit of Purchase & Stock List.
+        /// UI Reffered - Unit of Measure 
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> GetApplicationCodesByCodeTypeList(List<int> l_codeType)
+        {
+            var msg = await _rulesRepository.GetApplicationCodesByCodeTypeList(l_codeType);
+            return Ok(msg);
+
+        }
+        /// <summary>
         /// Getting  Unit of Measure List.
         /// UI Reffered - Unit of Measure Grid
         /// </summary>
@@ -84,26 +95,7 @@ namespace eSya.Admin.WebAPI.Controllers
             return Ok(msg);
 
         }
-        /// <summary>
-        /// Getting  Unit of Measure Purchase description by UOMP Code.
-        /// UI Reffered - Unit of Measure
-        /// </summary>
-        [HttpGet]
-        public async Task<IActionResult> GetUOMPDescriptionbyUOMP(string uomp)
-        {
-            var unit_measures = await _rulesRepository.GetUOMPDescriptionbyUOMP(uomp);
-            return Ok(unit_measures);
-        }
-        /// <summary>
-        /// Getting  Unit of Measure Stock description by UOMS Code.
-        /// UI Reffered - Unit of Measure
-        /// </summary>
-        [HttpGet]
-        public async Task<IActionResult> GetUOMSDescriptionbyUOMS(string uoms)
-        {
-            var unit_measures = await _rulesRepository.GetUOMSDescriptionbyUOMS(uoms);
-            return Ok(unit_measures);
-        }
+        
         /// <summary>
         /// Active Or De Active Unit of Measurement.
         /// UI Reffered - Unit of Measurement

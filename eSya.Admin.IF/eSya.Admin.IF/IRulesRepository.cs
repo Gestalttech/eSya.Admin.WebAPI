@@ -17,12 +17,11 @@ namespace eSya.Admin.IF
         #endregion
 
         #region Unit of Measure
+        Task<List<DO_ApplicationCodes>> GetApplicationCodesByCodeTypeList(List<int> l_codeType);
         Task<List<DO_UnitofMeasure>> GetUnitofMeasurements();
         Task<DO_ReturnParameter> InsertOrUpdateUnitofMeasurement(DO_UnitofMeasure uoms);
         Task<DO_ReturnParameter> InsertUnitofMeasurement(DO_UnitofMeasure uoms);
         Task<DO_ReturnParameter> UpdateUnitofMeasurement(DO_UnitofMeasure uoms);
-        Task<DO_UnitofMeasure> GetUOMPDescriptionbyUOMP(string uomp);
-        Task<DO_UnitofMeasure> GetUOMSDescriptionbyUOMS(string uoms);
         Task<DO_ReturnParameter> ActiveOrDeActiveUnitofMeasure(bool status, int unitId);
        
         #endregion

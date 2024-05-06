@@ -408,7 +408,7 @@ namespace eSya.Admin.DL.Entities
 
                 entity.Property(e => e.UnitOfMeasure).ValueGeneratedNever();
 
-                entity.Property(e => e.ConversionFactor).HasColumnType("numeric(12, 5)");
+                entity.Property(e => e.ConversionFactor).HasColumnType("numeric(18, 6)");
 
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
@@ -423,23 +423,9 @@ namespace eSya.Admin.DL.Entities
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
-                entity.Property(e => e.Uompdesc)
-                    .HasMaxLength(50)
-                    .HasColumnName("UOMPDesc");
+                entity.Property(e => e.Uompurchase).HasColumnName("UOMPurchase");
 
-                entity.Property(e => e.Uompurchase)
-                    .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("UOMPurchase");
-
-                entity.Property(e => e.Uomsdesc)
-                    .HasMaxLength(50)
-                    .HasColumnName("UOMSDesc");
-
-                entity.Property(e => e.Uomstock)
-                    .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("UOMStock");
+                entity.Property(e => e.Uomstock).HasColumnName("UOMStock");
             });
 
             modelBuilder.Entity<GtEcstrm>(entity =>

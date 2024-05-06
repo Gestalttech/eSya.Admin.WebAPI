@@ -16,7 +16,7 @@
   "W0083": "Unit of Measure is not Exist",
   "W0116": "Department Description is already Exist",
   "W0117": "Department is not Exist",
-
+  "W0129": "It is using in Item Master can't Edit or De Activate before Deactivate the Item Master ",
 
 
   "S0001": "Saved Sucessfully",
