@@ -8,6 +8,7 @@ namespace eSya.Admin.DL.Entities
         public int Isdcode { get; set; }
         public int StateCode { get; set; }
         public int CityCode { get; set; }
+        public int Stdcode { get; set; }
         public string CityDesc { get; set; } = null!;
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
